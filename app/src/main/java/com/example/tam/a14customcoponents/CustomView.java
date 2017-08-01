@@ -10,18 +10,18 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
-public class customView  extends View{
+public class CustomView extends View{
     private static final int mDefaultTextSize = 20;
     private Paint mPaint = new Paint();
     private float mLeft, mTop, mViewWidth = 300, mViewHeight = 300;
 
-    public customView(Context context) {
+    public CustomView(Context context) {
         super(context);
         mLeft = (getWidth() - mViewWidth)/2.0f;
         mTop = (getHeight() - mViewHeight)/2.0f;
     }
 
-    public customView(Context context, @Nullable AttributeSet attrs) {
+    public CustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mPaint.setColor(Color.RED);
     }

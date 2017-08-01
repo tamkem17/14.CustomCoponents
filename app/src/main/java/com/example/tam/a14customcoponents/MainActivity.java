@@ -10,14 +10,14 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private customView mCustomView;
+    private CustomView mCustomView;
     private ImageButton mImgbtnChooseColor;
     private EditText mEdtWidth, mEdtHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCustomView = (customView) findViewById(R.id.view);
+        mCustomView = (CustomView) findViewById(R.id.view);
         mEdtWidth = (EditText)findViewById(R.id.edt_sizeWidth);
         mEdtHeight = (EditText)findViewById(R.id.edt_sizeHeight);
         Button btnDraw = (Button)findViewById(R.id.btn_draw);
