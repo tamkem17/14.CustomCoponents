@@ -9,12 +9,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Created by tam on 8/1/2017.
- */
 
 public class customView  extends View{
-    private int mDefaultTextSize = 20;
+    private static final int mDefaultTextSize = 20;
     private Paint mPaint = new Paint();
     private float mLeft, mTop, mViewWidth = 300, mViewHeight = 300;
 
