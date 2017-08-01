@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private customView mCustomView;
@@ -27,13 +28,25 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            Float width = Float.parseFloat(mEdtWidth.getText().toString());
-            Float height = Float.parseFloat(mEdtHeight.getText().toString());
-            mCustomView.setSizeRectagle(width, height);
+            String widthString, heightString;
+            widthString = mEdtWidth.getText().toString();
+            heightString = mEdtHeight.getText().toString();
+            if(widthString == null || heightString == null) {
+                Toast.makeText(getApplicationContext(), "You are not allowed to leave blank", Toast.LENGTH_LONG).show();
+            }
+            else {
+                try {
+                    Float width = Float.parseFloat(mEdtWidth.getText().toString());
+                    Float height = Float.parseFloat(mEdtHeight.getText().toString());
+                    mCustomView.setSizeRectagle(width, height);
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "You are only allowed to enter a number", Toast.LENGTH_LONG).show();
+                }
+            }
         }
     }
 
-    public void ChooseColorClick(View view){
+    private void ChooseColorClick(View view){
         if(view != mImgbtnChooseColor) {
             ImageButton imgView = (ImageButton)view;
             String colorImageButton = view.getTag().toString();
