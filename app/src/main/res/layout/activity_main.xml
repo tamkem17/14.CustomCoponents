@@ -46,15 +46,15 @@
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:onClick="ChooseColorClick"
             android:src="@drawable/paint"
             android:background="#FF009900"
             android:tag="#FF009900"
+            android:id="@+id/imbtn_gred"
             />
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:onClick="ChooseColorClick"
+            android:id="@+id/imbtn_red"
             android:src="@drawable/paint"
             android:background="#fd0112"
             android:tag="#fd0112"
@@ -62,10 +62,10 @@
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="50dp"
-            android:onClick="ChooseColorClick"
             android:src="@drawable/paint"
             android:background="#FFFFCC00"
             android:tag="#FFFFCC00"
+            android:id="@+id/imbtn_yellow"
             />
     </LinearLayout>
 

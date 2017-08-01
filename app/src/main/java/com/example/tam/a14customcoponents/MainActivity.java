@@ -21,10 +21,29 @@ public class MainActivity extends AppCompatActivity {
         mEdtWidth = (EditText)findViewById(R.id.edt_sizeWidth);
         mEdtHeight = (EditText)findViewById(R.id.edt_sizeHeight);
         Button btnDraw = (Button)findViewById(R.id.btn_draw);
+        ImageButton btnChaneRed = (ImageButton) findViewById(R.id.imbtn_red);
+        ImageButton btnChaneYellow = (ImageButton)findViewById(R.id.imbtn_yellow);
+        ImageButton btnChaneGreed = (ImageButton)findViewById(R.id.imbtn_gred);
         btnDraw.setOnClickListener(new DrawRectagle());
+        btnChaneRed.setOnClickListener(new ChaneColors());
+        btnChaneGreed.setOnClickListener(new ChaneColors());
+        btnChaneYellow.setOnClickListener(new ChaneColors());
     }
 
-    private class DrawRectagle implements View.OnClickListener{
+    public class ChaneColors implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            if(v != mImgbtnChooseColor) {
+                ImageButton imgView = (ImageButton)v;
+                String colorImageButton = v.getTag().toString();
+                int newColor = Color.parseColor(colorImageButton);
+                mCustomView.setColor(newColor);
+            }
+        }
+    }
+
+    public class DrawRectagle implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
@@ -43,15 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You are only allowed to enter a number", Toast.LENGTH_LONG).show();
                 }
             }
-        }
-    }
-
-    private void ChooseColorClick(View view){
-        if(view != mImgbtnChooseColor) {
-            ImageButton imgView = (ImageButton)view;
-            String colorImageButton = view.getTag().toString();
-            int newColor = Color.parseColor(colorImageButton);
-            mCustomView.setColor(newColor);
         }
     }
 }
